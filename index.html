@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preload" href="assets/fonts/manrope-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/manrope-v20-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/manrope-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <title>Frontend Mentor | Article preview component</title>
+  </head>
   
-  <title>Frontend Mentor | Article preview component</title>
+  <body>
+    <main>
+      <img class="main__illustration" src="assets/images/drawers.jpg" width="660" height="528" alt="">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+      <article class="main__content">
+        <h2>Shift the overall look and feel by adding these wonderful 
+        touches to furniture in your home</h2>
 
-  Shift the overall look and feel by adding these wonderful 
-  touches to furniture in your home
+        <p>Ever been in a room and felt like something was missing? Perhaps 
+        it felt slightly bare and uninviting. I've got some simple tips 
+        to help you make any room feel complete.</p>
 
-  Ever been in a room and felt like something was missing? Perhaps 
-  it felt slightly bare and uninviting. I’ve got some simple tips 
-  to help you make any room feel complete.
+        <div class="main__author">
+          <img class="main__author--image" src="assets/images/avatar-michelle.jpg" width="175" height="175" alt="">
 
-  Michelle Appleton
-  28 Jun 2020
+          <div class="main_-author--info">
+            <div class="main__author--name"> Michelle Appleton</div>
+            <time class="main__time" datetime2020-06-28="">28 Jun 2020</time>
+          </div>
 
-  Share
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+          <button class="share-btn"><img class="shareBtn" src="assets/images/icon-share.svg" alt="Share"></button>
+        </div>
+
+        <div class="share-overlay">
+          <span>Share</span>
+          <div class="social-icons">
+            <img src="assets/images/icon-facebook.svg" alt="">
+            <img src="assets/images/icon-twitter.svg" alt="">
+            <img src="assets/images/icon-pinterest.svg" alt="">
+          </div>
+          <button class="share-icon"><img class="shareIcon" src="assets/images/icon-share.svg" alt="Share"></button>
+        </div>
+      </article>
+    </main>
+  </body>
 </html>

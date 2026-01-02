@@ -1,25 +1,188 @@
 /* manrope-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Manrope';
-  font-style: normal;
+  src: url('../fonts/manrope-v20-latin-regular.woff2') format('woff2'); 
   font-weight: 400;
-  src: url('../fonts/manrope-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  font-style: normal;
+  font-display: swap; 
 }
+  
 /* manrope-500 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Manrope';
-  font-style: normal;
+  src: url('assets/fonts/manrope-v20-latin-500.woff2') format('woff2'); 
   font-weight: 500;
-  src: url('../fonts/manrope-v20-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  font-style: normal;
+  font-display: swap; 
 }
+  
 /* manrope-700 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Manrope';
-  font-style: normal;
+  src: url('assets/fonts/manrope-v20-latin-700.woff2') format('woff2');
   font-weight: 700;
-  src: url('../fonts/manrope-v20-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  font-style: normal;
+  font-display: swap; 
+}
+
+
+/* == CSS RESET == */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements */
+ul, ol {
+  list-style: none;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.4;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+:root {
+  /* == COLOR PALLETTE == */
+
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --grayish-blue:  hsl(212, 23%, 69%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+  --clr-white: hsl(0, 0%, 98%);
+
+  /* == TYPOGRAPHY == */
+
+  /* font family */
+  --ff-body: "Manrope", sans-serif;
+
+  /* font size */
+  --fs-body: 0.82rem;
+
+  /* font weights */
+  --fw-bold: 500;
+  --fw-bolder: 700;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--light-grayish-blue);
+  display: flex;
+  justify-content: center;
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+}
+
+main {
+  width: 86%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--clr-white);
+  margin-block: 2rem;
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.main__illustration {
+  margin-block-end: -0.5rem;
+}
+
+article {
+  margin: 1.8rem 1.8rem 1rem;
+}
+
+h2 {
+  color: var(--very-dark-grayish-blue);
+  font-weight: var(--fw-bolder);
+  font-size: 1rem;
+}
+
+p {
+  color: var(--desaturated-dark-blue);
+  margin-block-end: 1.5rem;
+}
+
+.main__author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.main__author img {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.main__author button {
+  all: unset;
+  padding: 0.5rem;
+  background: var(--light-grayish-blue);
+  border-radius: 50%;
+}
+
+button .shareBtn {
+  display: block;
+  height: 1rem;
+  width: 1rem;
 }
 
