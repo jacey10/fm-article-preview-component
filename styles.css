@@ -79,16 +79,6 @@ textarea, select {
   font-size: inherit;
 }
 
-/* Make sure textareas without a rows attribute are not tiny */
-textarea:not([rows]) {
-  min-height: 10em;
-}
-
-/* Anything that has been anchored to should have extra scroll margin */
-:target {
-  scroll-margin-block: 5ex;
-}
-
 
 :root {
   /* == COLOR PALLETTE == */
@@ -113,10 +103,12 @@ textarea:not([rows]) {
 }
 
 body {
+  height: 100%;
   min-height: 100vh;
   background: var(--light-grayish-blue);
   display: flex;
   justify-content: center;
+  align-items: center;
   font-family: var(--ff-body);
   font-size: var(--fs-body);
   line-height: 1.5;
@@ -124,13 +116,14 @@ body {
 
 main {
   width: 86%;
+  max-width: 22rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: var(--clr-white);
-  margin-block: 2rem;
   border-radius: 0.8rem;
   overflow: hidden;
+  position: relative;
 }
 
 img {
@@ -145,7 +138,7 @@ img {
 }
 
 article {
-  margin: 1.8rem 1.8rem 1rem;
+  padding: 1.8rem 1.8rem 1.4rem;
 }
 
 h2 {
@@ -166,10 +159,15 @@ p {
   gap: 1rem;
 }
 
+.main__author--bio {
+  display: inline-flex;
+  gap: 1rem;
+}
+
 .main__author img {
   display: block;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
 }
 
@@ -178,6 +176,7 @@ p {
   padding: 0.5rem;
   background: var(--light-grayish-blue);
   border-radius: 50%;
+  cursor: pointer;
 }
 
 button .shareBtn {
@@ -185,4 +184,47 @@ button .shareBtn {
   height: 1rem;
   width: 1rem;
 }
+
+.share-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--very-dark-grayish-blue);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  visibility: hidden;
+}
+
+.text {
+  color: var(--grayish-blue);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.3rem;
+  
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+div ul {
+  margin-left: -3rem;
+}
+
+
+
+.share-overlay button {
+  all: unset;
+  padding: 0.5rem;
+  color: white;
+  background: var(--grayish-blue);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 
