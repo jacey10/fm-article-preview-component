@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    <link rel="preload" href="assets/fonts/manrope-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/manrope-v20-latin-500.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/manrope-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
     <title>Frontend Mentor | Article preview component</title>
   </head>
   
@@ -19,25 +19,25 @@
         <h2>Shift the overall look and feel by adding these wonderful 
         touches to furniture in your home</h2>
 
-        <p>Ever been in a room and felt like something was missing? Perhaps 
+        <p id="description">Ever been in a room and felt like something was missing? Perhaps 
         it felt slightly bare and uninviting. I've got some simple tips 
         to help you make any room feel complete.</p>
 
-        <div class="main__author">
-          <div class="main__author--bio">
-            <img class="main__author--image" src="assets/images/avatar-michelle.jpg" width="175" height="175" alt="">
+        <div id="authorBlock"  class="author--block">
+          <div class="author--bio">
+            <img class="author--avatar" src="assets/images/avatar-michelle.jpg" width="175" height="175" alt="">
 
-            <div class="main_author--info">
-              <div class="main__author--name"> Michelle Appleton</div>
-              <time class="main__time" datetime2020-06-28="">28 Jun 2020</time>
+            <div class="author--info">
+              <div class="author--name"> Michelle Appleton</div>
+              <time class="date-published" datetime2020-06-28="">28 Jun 2020</time>
             </div>
           </div>
 
-          <button class="share-btn"><img class="shareBtn" src="assets/images/icon-share.svg" alt="Share"></button>
+          <button id="shareButton"><img class="share--button" src="assets/images/icon-share.svg" alt="Share"></button>
         </div>
       </article>
 
-      <div id="shareOverlay" class="share-overlay">
+      <div id="shareBox" class="share--box">
 
         <span class="text">SHARE</span>
 
@@ -49,10 +49,12 @@
          </ul>
         </div>
 
-        <button class="share-btn"><img class="shareButton" src="assets/images/icon-share.svg" alt="Share"></button>
+        <button id="shareButton"><img class="share--button" src="assets/images/icon-share.svg" alt="Share"></button>
 
       </div>
       
     </main>
+
   </body>
 </html>
+
