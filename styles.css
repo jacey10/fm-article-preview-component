@@ -65,6 +65,32 @@ textarea, select {
   font-size: inherit;
 }
 
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 :root {
   /* == COLOR PALLETTE == */
 
@@ -88,7 +114,6 @@ textarea, select {
 }
 
 body {
-  height: 100%;
   min-height: 100vh;
   background: var(--light-grayish-blue);
   display: flex;
@@ -99,40 +124,41 @@ body {
   line-height: 1.5;
 }
 
+/* body > * {
+    flex-grow: 1;
+}
+
+.flow-content > * + * {
+    margin-block-start: var(--spacer, 1em);
+} */
+
 main {
   width: 86%;
-  max-width: 22rem;
+  max-width: 28rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   background: var(--clr-white);
   border-radius: 0.8rem;
   overflow: hidden;
 }
 
-
-img {
-  display: block;
-  max-width: 100%;
+.main__illustration {
   height: 100%;
   object-fit: cover;
-}
-
-.main__illustration {
   margin-block-end: -0.5rem;
 }
 
-article {
+.article--body {
   padding: 1.8rem 1.8rem 1.4rem;
 }
 
-h2 {
+.main__title {
   color: var(--very-dark-grayish-blue);
   font-weight: var(--fw-bolder);
   font-size: 1rem;
 }
 
-p {
+.main__description {
   color: var(--desaturated-dark-blue);
 }
 
@@ -140,18 +166,8 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  margin-block-start: 1rem;
-  padding: 0;
-}
-
-.hidden {
-  display: none;
-}
-
-.author--bio {
-  display: inline-flex;
-  gap: 1rem;
+  padding: 1.8rem 1.8rem 1.4rem;
+  position: relative;
 }
 
 .author--block img {
@@ -161,35 +177,50 @@ p {
   border-radius: 50%;
 }
 
+.author--info {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.article--info {
+  margin-block-start: -0.7rem;
+}
+
 .author--name {
   color: var(--very-dark-grayish-blue);
   font-weight: var(--fw-bold);
 }
 
-.date-published {
+.date--published {
   color: var(--grayish-blue);
 }
 
-.main__content .author--block button, main .share--box button  {
+/* Button base styles */
+.share--button {
   all: unset;
-  padding: 0.5rem;
-  background: var(--light-grayish-blue);
+  padding: 0.3rem;
+  background-color: var(--light-grayish-blue);
   border-radius: 50%;
   cursor: pointer;
-  pointer-events: all;
+  transition: background-color 0.3s ease; /* CHANGED - smooth transition for button */
 }
 
-.author--block button img {
-  display: block;
-  height: 1.5rem;
-  width: 1.5rem;
+/* Button hover - apply to BUTTON, not img */
+.share--button:hover {
+  background-color: var(--very-dark-grayish-blue); /* Darkens button background */
 }
 
-.author--block button img:hover {
-  color: white;
+
+/* Active state for mobile 
+.author--block button.active {
   background: var(--very-dark-grayish-blue);
-  padding: 0.3rem;
+} */
+
+.author--block button.active img {
+  filter: brightness(0) invert(1);
 }
+
 
 .share--box {
   display: none;
@@ -221,13 +252,39 @@ div ul {
   margin-left: -3rem;
 }
 
-.share-overlay button {
-  all: unset;
-  padding: 0.5rem;
-  color: white;
-  background: var(--grayish-blue);
+.author--block .share--button {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--light-grayish-blue);
+  border: none;
   border-radius: 50%;
   cursor: pointer;
+  transition: background 0.3s ease;
+  flex-shrink: 0;
+}
+
+.author--block .share--button:hover {
+  background: var(--very-dark-grayish-blue);
+}
+
+.share--button:hover .share-btn__icon path {
+  fill: var(--clr-white);
+}
+
+.share-btn__icon {
+  width: 0.9375rem;
+  height: auto;
+}
+
+.share-btn--close {
+  background: var(--clr-primary-blue);
+}
+
+.share-btn--close .share-btn__icon path {
+  fill: var(--clr-white);
 }
 
 
@@ -303,8 +360,9 @@ div ul {
     justify-content: space-between;
   }
 
-  .share--box .desktop-share {
-    display: none;
+  /* Hide the close button on desktop */
+  .close--button {
+    display: none !important;
   }
   
 }

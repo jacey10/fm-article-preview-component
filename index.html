@@ -15,42 +15,53 @@
     <main>
       <img class="main__illustration" src="assets/images/drawers.jpg" width="660" height="528" alt="">
 
-      <article class="main__content">
-        <h2>Shift the overall look and feel by adding these wonderful 
-        touches to furniture in your home</h2>
+      <article class="main__article">
 
-        <p id="description">Ever been in a room and felt like something was missing? Perhaps 
-        it felt slightly bare and uninviting. I've got some simple tips 
-        to help you make any room feel complete.</p>
+        <section class="article--body">
+
+          <h2 class="main__title">Shift the overall look and feel by adding these wonderful touches to furniture in your home</h2>
+
+          <p class="main__description">Ever been in a room and felt like something was missing? Perhaps 
+          it felt slightly bare and uninviting. I've got some simple tips 
+          to help you make any room feel complete.</p>
+
+        </section>
 
         <div id="authorBlock"  class="author--block">
-          <div class="author--bio">
+          
+          <div class="author--info">
             <img class="author--avatar" src="assets/images/avatar-michelle.jpg" width="175" height="175" alt="">
-
-            <div class="author--info">
-              <div class="author--name"> Michelle Appleton</div>
-              <time class="date-published" datetime2020-06-28="">28 Jun 2020</time>
+            <div class="article--info">
+              <p class="author--name"> Michelle Appleton</p>
+              <time class="date--published" datetime="2020-06-28">28 Jun 2020</time>
             </div>
           </div>
 
-          <button id="shareButton"><img class="share--button" src="assets/images/icon-share.svg" alt="Share"></button>
+          <div class="share--wrapper">
+
+            <button class="share--button" aria-label="Share article">
+              <svg class="share-btn__icon" xmlns="http://www.w3.org/2000/ svg" width="15" height="13">
+              <path fill="#6E8098" d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/>
+              </svg>
+            </button>
+
+            <div id="shareBox" class="share--box ">
+
+              <span class="sharebox--CTA">SHARE</span>
+
+              <ul class="social-icons">
+                <li><a href="#"><img src="assets/images/icon-facebook.svg" alt=""></a></li>
+                <li><a href="#"><img src="assets/images/icon-twitter.svg" alt=""></a></li>
+                <li><a href="#"><img src="assets/images/icon-pinterest.svg" alt=""></a></li>
+              </ul>
+          
+            </div>
+
+          </div>
+
         </div>
+
       </article>
-
-      <div id="shareBox" class="share--box">
-
-        <div>
-          <ul class="social-icons">
-            <li><span class="text">SHARE</span></li>
-            <li><a href="#"><img src="assets/images/icon-facebook.svg" alt=""></a></li>
-            <li><a href="#"><img src="assets/images/icon-twitter.svg" alt=""></a></li>
-            <li><a href="#"><img src="assets/images/icon-pinterest.svg" alt=""></a></li>
-         </ul>
-        </div>
-
-        <button id="shareButton" class="desktop-share"><img class="share--button" src="assets/images/icon-share.svg" alt="Share"></button>
-
-      </div>
       
     </main>
   </body>
