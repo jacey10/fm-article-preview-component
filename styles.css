@@ -153,6 +153,7 @@ body {
 
 .content--wrapper {
   width: 100%;
+  display: contents;
 }
 
 .main__card--title {
@@ -175,7 +176,6 @@ body {
   justify-content: space-between;
   gap: 1rem;
   margin: 0 1.7rem 0.4rem;
-  position: relative;
 }
 
 .author--block.hidden {
@@ -247,8 +247,6 @@ body {
 .share--box {
   background: var(--very-dark-grayish-blue);
   display: none;
-  justify-content: space-evenly;
-  gap: 1.4rem;
   padding: 0.2rem 0.5rem 0.6;
   border-radius: 0 0 0.8rem 0.8rem;
 }
@@ -256,6 +254,8 @@ body {
 .share--box.active {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  gap: clamp(1rem, 2.5vw, 1.4rem);
 }
 
 .share--box .close--button:hover, .share--box .close--button:active {
@@ -273,8 +273,8 @@ body {
   
 .social--icons {
   display: flex;
-  margin-inline-start: -4rem;
-  gap: 1rem;
+  margin-inline-start: clamp(-4rem, -1.5vw, -6rem);
+  gap: clamp(0.5rem, 2.5vw, 1.4rem);
 }
 
 .share--box .social--icons li a img {
@@ -287,9 +287,6 @@ body {
   width: 0.9375rem;
   height: auto;
 }
-
-
-
 
 
  @media screen and (min-width: 48rem) {
@@ -307,7 +304,6 @@ body {
     grid-template-columns: 1.2fr 1.6fr;
     grid-template-rows: 1.4fr;
     gap: 0.5rem;
-    position: relative;
   }
 
   .main__card--title {
@@ -320,22 +316,28 @@ body {
     margin-block-end: 1.5rem;
   }
 
+  .author--block {
+    margin: 0 2rem 1.25rem;
+    position: relative;
+  }
+
   #authorBlock.hidden {
     display: flex;
   }
 
   .share--box {
-    position: fixed;
-    width: 200px;
-    top: 50%;
-    left: 65.5%;
+    position: absolute;
+    width: fit-content;
+    height: 3rem;
+    bottom: 35.5%;
+    left: 65%;
     padding: 0.1rem 1.5rem;
     border-radius: 0.6rem;
     box-shadow: 0 0.25rem 0.25rem hsla(0, 0%, 0%, 0.4);
     display: none;
-    z-index: 1000;
-    bottom: auto;
+    z-index: 2;
   }
+
 
   .share--box::after {
     content: "";
@@ -351,10 +353,31 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 2rem;
   }
+  
 
   .desktop--hidden {
     display: none;
   }
+
+  .social--icons {
+    gap: 0.7rem;
+    margin-inline-start: -4rem;
+  }
   
+  .cta--text {
+    margin: 0;
+  }
+
+  .share--box .social--icons li a img {
+    max-width: 2rem;
+    height: 1.5rem;
+  }
+}
+
+@media (min-width:75rem) {
+  .share--box {
+    transform: translateX(2.5%) translateY(-1.2rem);
+  }
 }
