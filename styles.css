@@ -375,9 +375,3 @@ body {
     height: 1.5rem;
   }
 }
-
-@media (min-width:75rem) {
-  .share--box {
-    transform: translateX(2.5%) translateY(-1.2rem);
-  }
-}
