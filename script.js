@@ -5,6 +5,7 @@
 
         // Toggle function
         const toggleShare = () => {
+            
         const isOpen = shareBox.classList.contains('active');
         shareBox.classList.toggle('active');
         authorBlock.classList.toggle('hidden', !isOpen);

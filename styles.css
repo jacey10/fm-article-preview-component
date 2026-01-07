@@ -151,6 +151,10 @@ body {
   padding: 1.8rem 1.8rem 1.4rem;
 }
 
+.content--wrapper {
+  width: 100%;
+}
+
 .main__card--title {
   color: var(--very-dark-grayish-blue);
   font-weight: var(--fw-bolder);
@@ -170,7 +174,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin: 0 1rem 0.4rem;
+  margin: 0 1.7rem 0.4rem;
   position: relative;
 }
 
@@ -243,8 +247,9 @@ body {
 .share--box {
   background: var(--very-dark-grayish-blue);
   display: none;
-  justify-content: space-between;
-  padding: 0.2rem 0.5rem;
+  justify-content: space-evenly;
+  gap: 1.4rem;
+  padding: 0.2rem 0.5rem 0.6;
   border-radius: 0 0 0.8rem 0.8rem;
 }
 
@@ -287,7 +292,7 @@ body {
 
 
 
-/* @media screen and (min-width: 48rem) {
+ @media screen and (min-width: 48rem) {
   body {
     display: grid;
     place-items: center;
@@ -315,7 +320,7 @@ body {
     margin-block-end: 1.5rem;
   }
 
-  #info.hidden {
+  #authorBlock.hidden {
     display: flex;
   }
 
@@ -347,6 +352,9 @@ body {
     align-items: center;
     justify-content: space-between;
   }
+
+  .desktop--hidden {
+    display: none;
+  }
   
 }
-*/
