@@ -222,15 +222,15 @@ body {
 }
 
 /* Button hover & active - apply to BUTTON, not img */
-.share--button:hover {
+.share--button:focus {
   background: var(--very-dark-grayish-blue);
 } 
 
-.share--button.active {
-  background: var(--grayish-blue); /* Darkens button background */
+.share--button:active {
+  background: var(--very-dark-grayish-blue); /* Darkens button background */
 }
 
-.share--button:hover .share-btn__icon path {
+.share--button:focus .share-btn__icon path {
   fill: var(--light-grayish-blue);
 }
 
@@ -313,6 +313,10 @@ body {
     margin-block-end: 1.5rem;
   }
 
+  .footer {
+    height: auto;
+  }
+
   .author--block {
     margin: 0 2rem 1.25rem;
     position: relative;
@@ -322,11 +326,15 @@ body {
     display: flex;
   }
 
+  .share--button {
+    position: relative; 
+  }
+
   .share--box {
     position: absolute;
-    width: fit-content;
-    height: 3rem;
-    bottom: 15rem;
+    height: auto;
+    min-height: unset;
+    top: 19rem;
     right: 12.5rem;
     padding: 0.1rem 1.5rem;
     border-radius: 0.6rem;
