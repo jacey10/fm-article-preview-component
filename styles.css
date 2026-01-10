@@ -132,7 +132,7 @@ body {
   flex-direction: column;
   background: var(--clr-white);
   border-radius: 0.8rem;
-  overflow: hidden;
+  overflow: hidden; /* To clip decorative image */
   padding-bottom: 0;
 }
 
@@ -146,14 +146,14 @@ body {
 }
 
 .content--wrapper {
+  display: contents; /*Makes wrapper invisible on mobile */
   width: 100%;
-  display: contents;
 }
 
 .main__card--title {
   color: var(--very-dark-grayish-blue);
-  font-weight: var(--fw-bolder);
   font-size: 1rem;
+  font-weight: var(--fw-bolder);
   margin-block-start: -0.3rem;
   margin-block-end: 1.2rem;
   text-decoration: none;
@@ -182,10 +182,6 @@ body {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-}
-
-.author--block .share--box {
-  margin: 0;
 }
 
 .info-wrapper {
@@ -218,21 +214,22 @@ body {
   background: var(--light-grayish-blue);
   border-radius: 50%;
   cursor: pointer;
-  transition: all 0.25s ease; /* CHANGED - smooth transition for button */
+  transition: all 0.25s ease; /* smooth transition for button */
 }
 
-/* Button hover & active - apply to BUTTON, not img */
-.share--button:focus {
+/* Button hover & active - applied to BUTTON, not img */
+.share--button:hover {
   background: var(--very-dark-grayish-blue);
 } 
 
-.share--button:active {
-  background: var(--very-dark-grayish-blue); /* Darkens button background */
-}
-
-.share--button:focus .share-btn__icon path {
+.share--button:hover .share-btn__icon path {
   fill: var(--light-grayish-blue);
 }
+
+.share--button:active {
+  transform: scale(0.95);
+}
+
 
 .footer {
   height: 4rem;
@@ -298,28 +295,40 @@ body {
     width: 70%;
     max-width: clamp(65rem, 70vw, 70rem);
     display: grid;
-    grid-template-columns: 1.2fr 1.6fr;
+    grid-template-columns: 2fr 3fr;
     grid-template-rows: 1.4fr;
     gap: 0.5rem;
+    overflow: visible; 
+  }
+
+  .main__card--illustration {
+    border-top-left-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+  }
+
+  .content-wrapper {
+    overflow: visible;
+    position: relative; 
   }
 
   .main__card--title {
     font-size: clamp(0.77rem, 2vw, 1.3rem);
     line-height: 1.2;
-    margin-block-end: 1rem;
+    margin-block-start: 1rem;
   }
 
   .main__card--description {
-    margin-block-end: 1.5rem;
+    margin-block-start: 1.5rem;
   }
 
   .footer {
     height: auto;
+    position: static;
   }
 
   .author--block {
-    margin: 0 2rem 1.25rem;
     position: relative;
+    margin-block-end: 1.5rem;
   }
 
   #authorBlock.hidden {
@@ -328,27 +337,33 @@ body {
 
   .share--button {
     position: relative; 
+    margin-block-end: 0.8rem;
+  }
+
+  .share-btn__icon {
+    width: 0.9rem;
+    height: auto;
   }
 
   .share--box {
     position: absolute;
-    height: auto;
-    min-height: unset;
-    top: 19rem;
-    right: 12.5rem;
+    height: auto; /* Override mobile height */
+    min-height: unset; /* Remove any min-height */
+    bottom: 5.3rem;
+    right: -3.2rem;
     padding: 0.1rem 1.5rem;
     border-radius: 0.6rem;
     box-shadow: 0 0.25rem 0.25rem hsla(0, 0%, 0%, 0.4);
     display: none;
-    z-index: 2;
+    z-index: 100;
   }
 
 
   .share--box::after {
     content: "";
     position: absolute;
-    top: 100%;
-    left: 50%;
+    top: 2.7rem;
+    left: 5rem;
     border-width: 8px 8px 0 8px;
     border-style: solid;
     border-color: var(--very-dark-grayish-blue) transparent transparent transparent;
@@ -360,7 +375,23 @@ body {
     justify-content: space-between;
     gap: 2rem;
   }
-  
+
+  .share--button {
+    width: 1rem;
+    height: 1rem;
+    padding: 0.3rem;
+  }
+
+  /* When sharebox tooltip is open, keep button styled */
+  .share--box.active ~ * .share--button,
+  .footer:has(.share--box.active) .author--block .share--button {
+    background: var(--very-dark-grayish-blue);
+  }
+
+  .share--box.active ~ * .share--button .share-btn__icon path,
+  .footer:has(.share--box.active) .author--block .share--button .share-btn__icon path {
+    fill: var(--light-grayish-blue);
+  }
 
   .desktop--hidden {
     display: none;
@@ -372,11 +403,12 @@ body {
   }
   
   .cta--text {
+    font-size: 0.6rem;
     margin: 0;
   }
 
   .share--box .social--icons li a img {
-    max-width: 2rem;
-    height: 1.5rem;
+    max-width: 1rem;
+    height: 1rem;
   }
 }
