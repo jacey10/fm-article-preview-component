@@ -145,7 +145,7 @@ body {
   padding: 1.8rem 1.8rem 1.4rem;
 }
 
-.content--wrapper {
+.main__content--wrapper {
   display: contents; /*Makes wrapper invisible on mobile */
   width: 100%;
 }
@@ -306,7 +306,7 @@ body {
     border-bottom-left-radius: 0.8rem;
   }
 
-  .content-wrapper {
+  .main__content--wrapper {
     overflow: visible;
     position: relative; 
   }
