@@ -65,15 +65,7 @@ textarea, select {
   font-size: inherit;
 }
 
-/* Make sure textareas without a rows attribute are not tiny */
-textarea:not([rows]) {
-  min-height: 10em;
-}
 
-/* Anything that has been anchored to should have extra scroll margin */
-:target {
-  scroll-margin-block: 5ex;
-}
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
@@ -184,7 +176,7 @@ body {
   border-radius: 50%;
 }
 
-.info-wrapper {
+.info--wrapper {
   display: flex;
   gap: 1rem;
 }
