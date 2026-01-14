@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="preload" href="assets/fonts/manrope-v20-latin-500.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/manrope-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="main.css">
     <script defer src="script.js"></script>
     <title>Frontend Mentor | Article preview component</title>
   </head>
@@ -15,7 +15,8 @@
     <main class="main__card">
       <img class="main__card--illustration" src="assets/images/drawers.jpg" width="660" height="528" alt="">
 
-      <div class="main__content--wrapper">
+    
+      <div class="content-wrapper">
         <article class="main__card--content">
           <h2 class="main__card--title">Shift the overall look and feel by adding these wonderful touches to furniture in your home</h2>
 
@@ -23,17 +24,16 @@
           it felt slightly bare and uninviting. I've got some simple tips 
           to help you make any room feel complete.</p>
         </article>
-        
+
         <div class="footer">
           <div id="authorBlock" class="author--block">
             <div class="info--wrapper">
               <img class="author--avatar" src="assets/images/avatar-michelle.jpg" width="175" height="175" alt="">
-              
-              <div class="article--info">
-                <p class="author--name"> Michelle Appleton</p>
-                <time class="date--published" datetime="2020-06-28">28 Jun 2020</time>
-              </div>
-
+            
+            <div class="article--info">
+              <p class="author--name"> Michelle Appleton</p>
+              <time class="date--published" datetime="2020-06-28">28 Jun 2020</time>
+            </div>
             </div>
 
             <button class="share--button" aria-label="Share article">
@@ -41,9 +41,8 @@
                 <path fill="#6E8098" d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/>
               </svg>
             </button>
-
           </div>
-        
+
           <div id="shareBox" class="share--box">
             <span class="cta--text">share</span>
 
@@ -58,6 +57,7 @@
                 <path fill="#6E8098" d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/>
               </svg>
             </button>
+
           </div>
         </div>
       </div>

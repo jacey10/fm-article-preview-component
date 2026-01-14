@@ -65,7 +65,15 @@ textarea, select {
   font-size: inherit;
 }
 
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
 
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
@@ -137,11 +145,6 @@ body {
   padding: 1.8rem 1.8rem 1.4rem;
 }
 
-.main__content--wrapper {
-  display: contents; /*Makes wrapper invisible on mobile */
-  width: 100%;
-}
-
 .main__card--title {
   color: var(--very-dark-grayish-blue);
   font-size: 1rem;
@@ -154,6 +157,10 @@ body {
 .main__card--description {
   color: var(--desaturated-dark-blue);
   margin-block-end: 0;
+}
+
+.footer {
+  height: 4rem;
 }
 
 .author--block {
@@ -169,16 +176,17 @@ body {
   display: none;
 }
 
+.info--wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .author--block img {
   display: block;
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-}
-
-.info--wrapper {
-  display: flex;
-  gap: 1rem;
 }
 
 .article--info {
@@ -222,17 +230,12 @@ body {
   transform: scale(0.95);
 }
 
-
-.footer {
-  height: 4rem;
-}
-
 /* Styles for share-box */
 .share--box {
   min-height: 100%;
   background: var(--very-dark-grayish-blue);
   display: none;
-  padding: 0.2rem 0.5rem 0.6rem;
+  padding: 0.2rem 0.5rem 0.6;
   border-radius: 0 0 0.8rem 0.8rem;
 }
 
@@ -241,11 +244,6 @@ body {
   align-items: center;
   justify-content: space-evenly;
   gap: clamp(1rem, 2.5vw, 1.4rem);
-}
-
-.share--box .close--button:hover, .share--box .close--button:active {
-  background-color: unset;
-  cursor: default;
 }
 
 .cta--text {
@@ -298,7 +296,7 @@ body {
     border-bottom-left-radius: 0.8rem;
   }
 
-  .main__content--wrapper {
+  .content-wrapper {
     overflow: visible;
     position: relative; 
   }
@@ -328,8 +326,11 @@ body {
   }
 
   .share--button {
+    width: 1rem;
+    height: 1rem;
+    padding: 0.3rem;
     position: relative; 
-    margin-block-end: 0.8rem;
+    margin-block-end: 0.6rem;
   }
 
   .share-btn__icon {
@@ -368,12 +369,6 @@ body {
     gap: 2rem;
   }
 
-  .share--button {
-    width: 1rem;
-    height: 1rem;
-    padding: 0.3rem;
-  }
-
   /* When sharebox tooltip is open, keep button styled */
   .share--box.active ~ * .share--button,
   .footer:has(.share--box.active) .author--block .share--button {
@@ -384,23 +379,23 @@ body {
   .footer:has(.share--box.active) .author--block .share--button .share-btn__icon path {
     fill: var(--light-grayish-blue);
   }
-
-  .desktop--hidden {
-    display: none;
-  }
-
-  .social--icons {
-    gap: 0.7rem;
-    margin-inline-start: -4rem;
-  }
   
   .cta--text {
     font-size: 0.6rem;
     margin: 0;
   }
 
+  .social--icons {
+    gap: 0.7rem;
+    margin-inline-start: -4rem;
+  }
+
   .share--box .social--icons li a img {
     max-width: 1rem;
     height: 1rem;
+  }
+
+  .desktop--hidden {
+    display: none;
   }
 }
