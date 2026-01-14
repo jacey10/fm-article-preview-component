@@ -1,4 +1,4 @@
-// Get all share buttons (both main and close button)
+// Get all share buttons
 const shareButtons = document.querySelectorAll('.share--button');
 const shareBox = document.getElementById('shareBox');
 const authorBlock = document.getElementById('authorBlock');
