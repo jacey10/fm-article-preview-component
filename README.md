@@ -93,7 +93,8 @@ This is a solution to the [Article preview component challenge on Frontend Mento
 - ChatGPT and Claude as learning tools. I never copied any code without asking them to explain the code and why it works.
 
 ## Author
-- Website - [James Chima](https://www.your-site.com)
+
+- Website - [Jacey Blog](https://www.jacey.hashnode.dev/)
 - Frontend Mentor - [@jacey10](https://www.frontendmentor.io/profile/jacey10)
-- Twitter - [@jacey_opara](https://x.com/jacey_opara)
+- Twitter - [@jacey_muna](https://x.com/jacey_muna)
 
